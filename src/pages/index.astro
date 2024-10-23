@@ -1,0 +1,103 @@
+---
+import '~/assets/styles/global.css'
+
+import { Icon } from 'astro-icon/components'
+
+import Profitability from './_Profitability'
+---
+
+<html lang="es" class="bg-slate-100 pb-36">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <main class="max-w-[900px] p-4 m-auto">
+      <h1 class="text-4xl font-bold mb-10">Adminstradoras de Fondos de Pensiones (AFP)</h1>
+      <h2 class="text-2xl font-semibold mb-6">Rentabilidades reales</h2>
+      <div class="mb-6 space-y-4">
+        <p class="">
+          Las rentabilidades que se muestran a continuación corresponden a rentabilidades reales, a
+          diferencia de las nominales, los valores están ajustados según la inflación, usando la
+          Unidad de Fomento (UF) como referencia.
+        </p>
+        <p class="">
+          La rentabilidad refleja las ganacias o pérdidas relativas en un periodo de tiempo.
+        </p>
+        <p>
+          Los valores que se muestran a continuación son obtenidos desde <a
+            class="text-cyan-500 hover:underline"
+            href="https://www.spensiones.cl/portal/institucional/594/w3-propertyvalue-10089.html"
+            target="_blank">aquí</a
+          >. Los valores de las comisiones son obtenidos desde <a
+            class="text-cyan-500 hover:underline"
+            href="https://www.spensiones.cl/portal/institucional/594/w3-article-2810.html"
+            target="_blank">aquí</a
+          >.
+        </p>
+      </div>
+      <div class="grid grid-cols-12 gap-x-10 mb-10">
+        <div class="col-span-8">
+          <Profitability client:load />
+        </div>
+        <div class="col-span-4">
+          <h3 class="text-lg font-bold mb-4">Comisión</h3>
+          <p class="mb-10">Ordenadas de menor a mayor comisión.</p>
+
+          <div class="space-y-8">
+            <div class="flex flex-row items-center gap-6">
+              <div class="font-bold text-gray-400 text-xl">1°</div>
+              <Icon name="logo-uno" width="100%" height="100%" class="max-w-[100px]" />
+              <div>0,49%</div>
+            </div>
+            <div class="flex flex-row items-center gap-6">
+              <div class="font-bold text-gray-400 text-xl">2°</div>
+              <Icon name="logo-modelo" width="100%" height="100%" class="max-w-[100px]" />
+              <div>0,58%</div>
+            </div>
+            <div class="flex flex-row items-center gap-6">
+              <div class="font-bold text-gray-400 text-xl">3°</div>
+              <Icon
+                name="logo-planvital"
+                width="100%"
+                height="100%"
+                class="max-w-[100px] bg-red-600 py-4"
+              />
+              <div>1,16%</div>
+            </div>
+            <div class="flex flex-row items-center gap-6">
+              <div class="font-bold text-gray-400 text-xl">4°</div>
+              <Icon name="logo-habitat" width="100%" height="100%" class="max-w-[100px]" />
+              <div>1,27%</div>
+            </div>
+            <div class="flex flex-row items-center gap-6">
+              <div class="font-bold text-gray-400 text-xl">5°</div>
+              <Icon name="logo-capital" width="100%" height="100%" class="max-w-[100px]" />
+              <div>1,44%</div>
+            </div>
+            <div class="flex flex-row items-center gap-6">
+              <div class="font-bold text-gray-400 text-xl">5°</div>
+              <Icon name="logo-cuprum" width="100%" height="100%" class="max-w-[100px]" />
+              <div>1,44%</div>
+            </div>
+            <div class="flex flex-row items-center gap-6">
+              <div class="font-bold text-gray-400 text-xl">6°</div>
+              <Icon name="logo-provida" width="100%" height="100%" class="max-w-[100px]" />
+              <div>1,45%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="text-2xl font-semibold mb-6">¿Cuál me conviene?</h2>
+      <div>
+        <p>
+          La rentabilidad es variable, por lo que no se garantiza que rentabilidades pasadas se
+          repitan en el futuro.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
