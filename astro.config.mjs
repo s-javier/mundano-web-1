@@ -6,6 +6,7 @@ import node from '@astrojs/node'
 import solidJs from '@astrojs/solid-js'
 import suidPlugin from '@suid/vite-plugin'
 import icon from 'astro-icon'
+import solidSvg from 'vite-plugin-solid-svg'
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,6 +28,6 @@ export default defineConfig({
         '~': path.resolve(path.dirname(fileURLToPath(import.meta.url)), './src'),
       },
     },
-    plugins: [suidPlugin()],
+    plugins: [suidPlugin(), solidSvg()],
   },
 })
