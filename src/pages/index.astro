@@ -4,6 +4,7 @@ import '~/assets/styles/global.css'
 import { Icon } from 'astro-icon/components'
 
 import Profitability from './_Profitability'
+import Convenience from './_Convenience'
 ---
 
 <html lang="es" class="bg-slate-100 pb-36">
@@ -15,7 +16,7 @@ import Profitability from './_Profitability'
     <title>Astro</title>
   </head>
   <body>
-    <main class="max-w-[900px] p-4 m-auto">
+    <main class="max-w-[1050px] p-4 m-auto">
       <h1 class="text-4xl font-bold mb-10">Adminstradoras de Fondos de Pensiones (AFP)</h1>
 
       <h2 class="text-2xl font-semibold mb-6">Comisiones</h2>
@@ -92,11 +93,19 @@ import Profitability from './_Profitability'
       </div>
 
       <h2 class="text-2xl font-semibold mb-6">¿Cuál me conviene?</h2>
-      <div>
+      <div class="mb-6 space-y-4">
         <p>
-          La rentabilidad es variable, por lo que no se garantiza que rentabilidades pasadas se
-          repitan en el futuro.
+          A continuación se muestra las rentabilidades descontando la comisión. Se asume un sueldo
+          imponible constante en todos los periodos.
         </p>
+        <p>
+          Este análisis es para tomar la decisión hoy, ya que la rentabilidad es variable, por lo
+          que no se garantiza que rentabilidades pasadas se repitan en el futuro.
+        </p>
+        <p></p>
+      </div>
+      <div class="mb-10">
+        <Convenience client:load />
       </div>
     </main>
   </body>
