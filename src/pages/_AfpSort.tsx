@@ -20,7 +20,7 @@ export default function AfpSort(props: { list: { afp: Afp; value: number }[] }) 
   return (
     <For each={props.list}>
       {(item, index) => (
-        <div class="flex flex-row items-center gap-3 mb-2">
+        <div class="flex flex-row items-center gap-6 mb-2">
           <div class="font-bold text-gray-400 text-xl">{index() + 1}°</div>
           <Show when={item.afp === Afp.CAPITAL}>
             <LogoCapital />

@@ -43,14 +43,15 @@ export default function Profitability() {
           break
       }
       c = divide(c, 100)
-      const r = divide(item[type], 100)
+      const r_t = divide(item[type], 100)
       // const value = chain(3).add(4).multiply(2).done()
-      // const value = subtract(
-      //   multiply(0.1, pow(subtract(pow(add(1, r), divide(1, months)), 1), months)),
-      //   multiply(months, add(0.1, c)),
-      // )
-      const j = subtract(pow(add(1, r), divide(1, months)), 1)
-      const value = subtract(multiply(0.1, months, r), multiply(months, add(0.1, c)))
+      const r_m = subtract(pow(add(1, r_t), divide(1, months)), 1)
+      let sum = 0
+      for (let i = 0; i < months; i += 1) {
+        // @ts-ignore
+        sum += pow(add(1, r_m), i)
+      }
+      const value = subtract(multiply(0.1, divide(sum, multiply(months, add(0.1, c)))), 1)
       // console.log(item.afp, period, item[type])
       // console.log('months', months)
       // console.log('comisión', c)
@@ -82,24 +83,24 @@ export default function Profitability() {
 
       <Tabs.Content class="tabs__content" value="profile">
         <p class="mb-6">Resultados ordenados de mayor a menor rentabilidad.</p>
-        <div class="grid grid-cols-10 gap-x-12">
-          <div class="col-span-2">
+        <div class="grid grid-cols-10 gap-x-12 gap-y-6">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo A</h3>
             <AfpSort list={sortWithCommission('month', FoundType.A)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo B</h3>
             <AfpSort list={sortWithCommission('month', FoundType.B)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo C</h3>
             <AfpSort list={sortWithCommission('month', FoundType.C)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo D</h3>
             <AfpSort list={sortWithCommission('month', FoundType.D)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo E</h3>
             <AfpSort list={sortWithCommission('month', FoundType.E)} />
           </div>
@@ -107,7 +108,7 @@ export default function Profitability() {
       </Tabs.Content>
       <Tabs.Content class="tabs__content" value="dashboard">
         <p class="mb-6">Resultados ordenados de mayor a menor rentabilidad.</p>
-        <div class="grid grid-cols-10 gap-x-12">
+        <div class="grid grid-cols-10 gap-x-12 gap-y-6">
           <div class="col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo A</h3>
             <AfpSort list={sortWithCommission('currentYear', FoundType.A)} />
@@ -132,7 +133,7 @@ export default function Profitability() {
       </Tabs.Content>
       <Tabs.Content class="tabs__content" value="settings">
         <p class="mb-6">Resultados ordenados de mayor a menor rentabilidad.</p>
-        <div class="grid grid-cols-10 gap-x-12">
+        <div class="grid grid-cols-10 gap-x-12 gap-y-6">
           <div class="col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo A</h3>
             <AfpSort list={sortWithCommission('twelveMonths', FoundType.A)} />

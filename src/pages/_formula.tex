@@ -1,0 +1,30 @@
+% https://latexeditor.lagrida.com/
+
+r_m = (1 + r_t)^\frac{1}{t} - 1
+
+\newline
+\newline
+
+Valor_{inicial} = SI \cdot t \cdot (0.1 + c)
+
+\newline
+\newline
+
+Valor_{final} = SI \cdot 0.1 \sum_{i=0}^{t-1}{(1 + r_m)^i}
+
+\newline
+\newline
+
+Beneficio_{relativo} = \frac{Valor_{final} - Valor_{inicial}}{Valor_{inicial}}
+
+\newline
+\newline
+
+Beneficio_{relativo} = \frac{SI \cdot 0.1 \sum_{i=0}^{t-1}{(1 + r_m)^i} - SI \cdot t \cdot (0.1 + c)}{SI \cdot t \cdot (0.1 + c)}
+
+\newline
+\newline
+
+\Rightarrow
+
+Beneficio_{relativo} = 0.1 \cdot \frac{\sum_{i=0}^{t-1}{(1 + r_m)^i}}{t \cdot (0.1 + c)} - 1
