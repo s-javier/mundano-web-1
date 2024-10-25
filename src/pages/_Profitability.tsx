@@ -62,19 +62,19 @@ export default function Profitability() {
             <h3 class="font-semibold text-lg mb-4">Fondo A</h3>
             <AfpSort list={sort('currentYear', FoundType.A)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo B</h3>
             <AfpSort list={sort('currentYear', FoundType.B)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo C</h3>
             <AfpSort list={sort('currentYear', FoundType.C)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo D</h3>
             <AfpSort list={sort('currentYear', FoundType.D)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo E</h3>
             <AfpSort list={sort('currentYear', FoundType.E)} />
           </div>
@@ -83,23 +83,23 @@ export default function Profitability() {
       <Tabs.Content class="tabs__content" value="settings">
         <p class="mb-6">Resultados ordenados de mayor a menor rentabilidad.</p>
         <div class="grid grid-cols-10 gap-x-12 gap-y-6">
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo A</h3>
             <AfpSort list={sort('twelveMonths', FoundType.A)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo B</h3>
             <AfpSort list={sort('twelveMonths', FoundType.B)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo C</h3>
             <AfpSort list={sort('twelveMonths', FoundType.C)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo D</h3>
             <AfpSort list={sort('twelveMonths', FoundType.D)} />
           </div>
-          <div class="col-span-2">
+          <div class="col-span-6 sm:col-span-4 md:col-span-3 lg:col-span-2">
             <h3 class="font-semibold text-lg mb-4">Fondo E</h3>
             <AfpSort list={sort('twelveMonths', FoundType.E)} />
           </div>
